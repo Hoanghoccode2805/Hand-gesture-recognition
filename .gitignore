@@ -1,0 +1,6 @@
+Structure.png
+anh_the.png
+
+*.pdf
+__pycache__/
+venv/
