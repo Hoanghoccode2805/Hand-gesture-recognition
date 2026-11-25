@@ -1,6 +1,5 @@
 Structure.png
-anh_the.png
-
+*.csv
 *.pdf
 __pycache__/
 venv/
