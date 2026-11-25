@@ -12,4 +12,4 @@ y_pred = rfc.predict(X_test)
 print(accuracy_score(y_pred, y_test))
 print(confusion_matrix(y_test, y_pred))
 
-joblib.dump(rfc, "models/test_gesture_model.joblib")
+joblib.dump(rfc, "models/random_forest.joblib")

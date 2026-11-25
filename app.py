@@ -7,7 +7,7 @@ from src.hand_tracking import HandTracker
 
 BASE_DIR = Path(__file__).resolve().parent
 TASK_MODEL_PATH = str(BASE_DIR / "models" / "hand_landmarker.task")
-GESTURE_MODEL_PATH = BASE_DIR / "models" / "test_gesture_model.joblib"
+GESTURE_MODEL_PATH = BASE_DIR / "models" / "random_forest.joblib"
 
 CLASS_NAMES = {
     0: "Open Palm",
@@ -49,9 +49,9 @@ def main():
     try: 
         window_name = "Hand Gesture Data Collector"
         cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
-        cv2.resizeWindow(window_name, 1280, 720)
-        cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
-        cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+        cv2.resizeWindow(window_name, 800, 500)
+        cap.set(cv2.CAP_PROP_FRAME_WIDTH, 800)
+        cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 500)
         
         while True:
             ret, frame = cap.read()
@@ -92,7 +92,7 @@ def main():
                     1,
                 )
 
-            cv2.imshow("Hand Gesture Recognition", frame)
+            cv2.imshow(window_name, frame)
 
             if cv2.waitKey(1) & 0xFF == ord("q"):
                 break
