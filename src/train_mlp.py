@@ -4,7 +4,10 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, TensorDataset
 from sklearn.model_selection import train_test_split
-from preprocessing import Preprocessor
+try:
+    from src.preprocessing import Preprocessor
+except ModuleNotFoundError:
+    from preprocessing import Preprocessor
 
 class GestureMLP(nn.Module):                                # khởi tạo class con từ class cha là nn.Module
     def __init__(self, input_size = 63, num_classes = 4):
